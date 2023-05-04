@@ -24,14 +24,16 @@ Right now we have these machines:
   * linux-tower2 (public only)
   * gpu-server (public and private PHI data)
 
-Until further notice linux-tower1 will be the main source but on machines we will likely need to partition data and projects as all data won't fit on one server. That is where the isilon above comes in but we need to wait for that and or the RAID (more details on that later, but it's a mountable data source that mimics the isilon).
+Until further notice linux-tower1 will be the main source but on various machines we will likely need to partition data and projects as all data won't fit on one server. That is where the isilon above comes in but we need to wait for that and or the RAID (more details on that later, but it's a mountable data source that mimics the isilon).
 
 * People should work in their home directories and clone git code there.
 * A corresponding folder with the same exact name should be under /projects
-* Any folders under /projects/<git repo> should have a manually made README with 3 things:
+* Any folders under /projects/<git repo> should have a manually made README.md with 3 things:
   - Github repo link
   - Commit hash that made this data
-  - .env used with code that stores /data source and any other config
+  - Source data for this particular analysis
+* A copy of the .env used with code that stores /data source and any other config
+> Later if you all thinkg merging the .env data with the README.md for one README.md file that has everything, we can do that.
 
 Ex: Organization with this very repo:
 ```bash
