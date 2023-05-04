@@ -8,7 +8,7 @@ This is always changing but ultimately the plan is to back data up on the CU Oph
 /Some_Parent_Lab_Folder  
   /data  
     /public  
-	/private  
+	  /private  
   /projects  
     /<git repo>  
 	/<git repo>  
