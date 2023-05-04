@@ -72,7 +72,7 @@ PROJECT_INPUT_DATA_DIR=
 PROJECT_DIR=
 ```
 
-You should be here (but for your home directory):
+You should be here after making a new repo for your project and setting it up:
 ```bash
 (venv3.10.6) bearceb@OPH-D-JJ526S3:~/CU_Project_Template$
 ```
