@@ -4,18 +4,19 @@ A template for using the CU environments and tracking generated data
 # Infrastructure
 This is always changing but ultimately the plan is to back data up on the CU Ophthalmology Isilon. That will have this structure:
 
+> Note: git_repo_name is where results go, but not the repo itself. This shouldn't be where code lives.
 ```bash
 /Some_Parent_Lab_Folder
   /data
     /public
     /private
   /projects
-    /<git repo>
+    /<git_repo_name>
       /sample_analysis1
       /sample_analysis2
-    /<git repo>
+    /<git_repo_name>
       /sample_analysis
-    /<git repo>
+    /<git_repo_name>
   ...
 ```
 Right now we have these machines:
