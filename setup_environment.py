@@ -28,10 +28,10 @@ def main():
     # Make README.md for others in the future
     with open(os.path.join(OUTPUT, "README.md"), "w") as README:
         README.writelines(f"""# Git Repo
-{git_url}\n
+{git_url}
 
 # Commit
-{git_current_commit}\n
+{git_current_commit}
 
 # Raw Data Source
 {INPUT}""")

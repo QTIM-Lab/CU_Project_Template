@@ -98,4 +98,44 @@ Run analysis:
 python analysis.py
 ```
 
+Explore directories:
+```bash
+ls /data/public/retina_datasets/RIM/RIM-ONE_database_r1
+Deep  Early  Moderate  Normal  README.md
+```
+
+```bash
+ls -a /projects/CU_Project_Template/sample_analysis
+.  ..  .env  README.md  results.txt
+```
+
+```bash
+cat /projects/CU_Project_Template/sample_analysis/.env
+# Inputs
+## raw data input path
+DATA_DIR=/data/public/retina_datasets/RIM/RIM-ONE_database_r1
+## if source is not DATA_DIR but someone else's output in PROJECT_DIR
+PROJECT_INPUT_DATA_DIR=
+## your /projects/<git repo>/<specific analysis dir>
+PROJECT_DIR=/projects/CU_Project_Template/sample_analysis
+```
+
+```bash
+cat /projects/CU_Project_Template/sample_analysis/README.md
+# Git Repo
+https://github.com/QTIM-Lab/CU_Project_Template.git
+
+# Commit
+c7afb610bf528d926827168bb1ba065e7336c904
+
+# Raw Data Source
+/data/public/retina_datasets/RIM/RIM-ONE_database_r1
+```
+
+```bash
+cat /projects/CU_Project_Template/sample_analysis/results.txt
+Folders and files in /projects/CU_Project_Template/sample_analysis direcory:
+Normal,Early,README.md,Moderate,Deep
+```
+
 # Docker based project
