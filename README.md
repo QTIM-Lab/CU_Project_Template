@@ -11,8 +11,8 @@ This is always changing but ultimately the plan is to back data up on the CU Oph
     /private
   /projects
     /<git repo>
-  /<git repo>
-  /<git repo>
+    /<git repo>
+    /<git repo>
   ...
 ```
 Right now we have these machines:
