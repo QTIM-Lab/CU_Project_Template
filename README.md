@@ -33,7 +33,7 @@ Until further notice linux-tower1 will be the main source but on various machine
   - Commit hash that made this data
   - Source data for this particular analysis
 * A copy of the .env used with code that stores /data source and any other config
-> Later if you all thinkg merging the .env data with the README.md for one README.md file that has everything, we can do that.
+> Later if you all think merging the .env data with the README.md for one README.md file that has everything, we can do that.
 
 Ex: Organization with this very repo:
 ```bash
