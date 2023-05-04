@@ -7,7 +7,7 @@ This is always changing but ultimately the plan is to back data up on the CU Oph
 ```bash
 /Some_Parent_Lab_Folder  
   /data  
-    /public  
+    /public
 	  /private  
   /projects  
     /<git repo>  
