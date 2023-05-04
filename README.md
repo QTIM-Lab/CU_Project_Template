@@ -5,15 +5,15 @@ A template for using the CU environments and tracking generated data
 This is always changing but ultimately the plan is to back data up on the CU Ophthalmology Isilon. That will have this structure:
 
 ```bash
-/Some_Parent_Lab_Folder  
-  /data  
+/Some_Parent_Lab_Folder
+  /data
     /public
-	  /private  
-  /projects  
-    /<git repo>  
-	/<git repo>  
-	/<git repo>  
-	...
+    /private
+  /projects
+    /<git repo>
+  /<git repo>
+  /<git repo>
+  ...
 ```
 Right now we have these machines:
   * linux-tower1 (public only)
