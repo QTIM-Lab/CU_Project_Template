@@ -11,7 +11,10 @@ This is always changing but ultimately the plan is to back data up on the CU Oph
     /private
   /projects
     /<git repo>
+      /sample_analysis1
+      /sample_analysis2
     /<git repo>
+      /sample_analysis
     /<git repo>
   ...
 ```
