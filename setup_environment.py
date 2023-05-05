@@ -37,7 +37,7 @@ def main():
 {INPUT}""")
         
     # Copy .env used to help track 
-    shutil.copy(os.path.join(os.getcwd(), ".env"), os.path.join(PROJECT_DIR, ".env"))
+    shutil.copy(os.path.join(os.getcwd(), ".env"), os.path.join(OUTPUT, ".env"))
 
 
 if __name__ == "__main__":
