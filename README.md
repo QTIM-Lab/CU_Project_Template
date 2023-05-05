@@ -1,6 +1,9 @@
 # CU_Project_Template
 A template for using the CU environments and tracking generated data
 
+## Helicopter view
+![directories_image.png](directories_image.png)
+
 # Infrastructure
 This is always changing but ultimately the plan is to back data up on the CU Ophthalmology Isilon. That will have this structure:
 
@@ -206,6 +209,3 @@ Run analysis:
 ```bash
 python analysis.py
 ```
-
-## Helicopter view
-![directories_image.png](directories_image.png)
