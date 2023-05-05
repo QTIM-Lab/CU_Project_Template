@@ -138,4 +138,71 @@ Folders and files in /projects/CU_Project_Template/sample_analysis direcory:
 Normal,Early,README.md,Moderate,Deep
 ```
 
-# Docker based project
+# Docker Based Project
+I will skip the detail above as I will produce the same results with docker.
+
+> Note it's usually best practice not to load code into a docker image but rather to mount it in. This has the advantage of being able to change the code without shelling into the container. There are instances where loading it in is good but for our type of work, I doubt this is the case.
+
+## Build docker
+```bash
+DOCKER_IMAGE_NAME=bearceb/pytorch:2.0.0-cuda11.7-cudnn8-devel
+docker build -f Dockerfile -t $DOCKER_IMAGE_NAME ./
+```
+
+## Launch docker
+```bash
+DOCKER_IMAGE_NAME=bearceb/pytorch:2.0.0-cuda11.7-cudnn8-devel
+# We source .env beforehand as we have to mount the
+# /data... and /projects... directories.
+source .env
+# RESIST THE TEMPTATION to mount /data and /projects directly and only
+# That is exaclty how someone deletes everything for everyone.
+# Mount your area ONLY.
+# Always mount /data... directories with <path>:ro as shown below
+# *** remember "rm -fr" is NOT the command to delete the French language pack ;) ***
+
+CMD_OVERRIDE=
+
+docker run \
+  -it \
+  --rm \
+  --name bearceb_sample_analysis \
+  -v /home/bearceb/CU_Project_Template:/CU_Project_Template \
+  -v $DATA_DIR:$DATA_DIR:ro \
+  -v $PROJECT_INPUT_DATA_DIR:$PROJECT_INPUT_DATA_DIR:ro \
+  -v $PROJECT_DIR:$PROJECT_DIR \
+  $DOCKER_IMAGE_NAME $CMD_OVERRIDE
+```
+
+At this point things should be the same as the virtualenv example above:
+```bash
+root@f6288da93e0d:/CU_Project_Template# ls
+Dockerfile  LICENSE  README.md  __pycache__  analysis.py  requirements.txt  setup_environment.py
+```
+
+```bash
+cat .env
+
+# Inputs
+## raw data input path
+DATA_DIR=/data/public/retina_datasets/RIM/RIM-ONE_database_r1
+## if source is not DATA_DIR but someone else's output in PROJECT_DIR
+PROJECT_INPUT_DATA_DIR=
+## your /projects/<git repo>/<specific analysis dir>
+PROJECT_DIR=/projects/CU_Project_Template/sample_analysis
+
+ls /data/public/retina_datasets/RIM/RIM-ONE_database_r1
+Deep  Early  Moderate  Normal  README.md
+```
+
+## Run setup and analysis scripts
+
+Run setup script:
+```bash
+python setup_environment.py
+```
+
+Run analysis:
+```bash
+python analysis.py
+```
