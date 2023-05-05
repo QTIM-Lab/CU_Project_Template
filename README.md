@@ -160,7 +160,7 @@ DOCKER_IMAGE_NAME=bearceb/pytorch:2.0.0-cuda11.7-cudnn8-devel
 source .env
 # RESIST THE TEMPTATION to mount /data and /projects directly and only
 # That is exaclty how someone deletes everything for everyone.
-# Mount your area ONLY.
+# Mount your project analysis area ONLY.
 # Always mount /data... directories with <path>:ro as shown below
 # *** remember "rm -fr" is NOT the command to delete the French language pack ;) ***
 
@@ -170,12 +170,36 @@ docker run \
   -it \
   --rm \
   --name bearceb_sample_analysis \
-  -v /home/bearceb/CU_Project_Template:/CU_Project_Template \
+  -w /CU_Project_Template \
+  -v $PWD:/CU_Project_Template \
   -v $DATA_DIR:$DATA_DIR:ro \
   -v $PROJECT_INPUT_DATA_DIR:$PROJECT_INPUT_DATA_DIR:ro \
   -v $PROJECT_DIR:$PROJECT_DIR \
   $DOCKER_IMAGE_NAME $CMD_OVERRIDE
 ```
+> $PWD should be the root of git repo and /CU_Project_Template should be the name of git repo you are using
+
+> Not ideal but since we are root here and not your normal user, we have to give git permission to allow a non-normal user (root) to do git commands
+```bash
+git config --global --add safe.directory /CU_Project_Template
+```
+
+Ex:
+```bash
+root@4525eed5ee86:/CU_Project_Template# git log
+fatal: detected dubious ownership in repository at '/CU_Project_Template'
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory /CU_Project_Template
+root@4525eed5ee86:/CU_Project_Template# git config --global --add safe.directory /CU_Project_Template
+root@4525eed5ee86:/CU_Project_Template# git log
+commit 33032147aac320bcb820b37d2fb16ac9e4cbe693 (HEAD -> main, origin/main, origin/HEAD)
+Author: bbearce <bbearce@gmail.com>
+Date:   Fri May 5 14:17:31 2023 -0600
+
+    variable update
+```
+
 
 At this point things should be the same as the virtualenv example above:
 ```bash
