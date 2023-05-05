@@ -206,3 +206,6 @@ Run analysis:
 ```bash
 python analysis.py
 ```
+
+## Helicopter view
+![directories_image.png](directories_image.png)
