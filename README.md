@@ -139,8 +139,8 @@ c7afb610bf528d926827168bb1ba065e7336c904
 ```
 
 ```bash
-cat /projects/CU_Project_Template/sample_analysis/results.txt
-Folders and files in /projects/CU_Project_Template/sample_analysis direcory:
+cat /projects/CU_Project_Template/sample_analysis/results.txt 
+Folders and files in /data/public/retina_datasets/RIM/RIM-ONE_database_r1 direcory:
 Normal,Early,README.md,Moderate,Deep
 ```
 

@@ -15,7 +15,7 @@ OUTPUT = PROJECT_DIR
 def perform_analysis():
     files_and_folders = os.listdir(INPUT)
     with open(os.path.join(OUTPUT, "results.txt"), "w") as analysis_file:
-        analysis_file.write(f"Folders and files in {OUTPUT} direcory:\n")
+        analysis_file.write(f"Folders and files in {INPUT} direcory:\n")
         analysis_file.write(",".join(files_and_folders))
 
 
