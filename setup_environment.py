@@ -12,11 +12,6 @@ PROJECT_DIR = os.getenv('PROJECT_DIR')
 INPUT = DATA_DIR # set whether DATA_DIR or PROJECT_INPUT_DATA_DIR is the source
 OUTPUT = PROJECT_DIR
 
-def perform_analysis():
-    files_and_folders = os.listdir(INPUT)
-    with open(os.path.join(OUTPUT), "w") as analysis_file:
-        analysis_file.write(files_and_folders)
-
 def main():
     if not os.path.exists(OUTPUT):
         os.mkdir(OUTPUT) # create today's analysis folder
